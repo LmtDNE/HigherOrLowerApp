@@ -10,14 +10,12 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    int randomNumber;
     public void clickFunction(View view) {
         EditText inputGuess = (EditText) findViewById(R.id.guessInput);
         Log.i("This is the guess :", inputGuess.getText().toString());
-        Random randomGenerator = new Random();
-        int randomNumber = randomGenerator.nextInt(11);
-        Log.i("This is random number: ",  Integer.toString(randomNumber));
         int finalGuess = Integer.parseInt(inputGuess.getText().toString());
+        System.out.println("This is randomNumber: " +  randomNumber);
 
         if(finalGuess > randomNumber ) {
             Toast.makeText(getApplicationContext(), "Your guess is too high", Toast.LENGTH_LONG).show();
@@ -32,5 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Random randomGenerator = new Random();
+        randomNumber = randomGenerator.nextInt(21);
     }
 }
