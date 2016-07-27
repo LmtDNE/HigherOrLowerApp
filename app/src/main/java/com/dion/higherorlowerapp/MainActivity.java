@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -17,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("This is the guess :", inputGuess.getText().toString());
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(11);
+        Log.i("This is random number: ",  Integer.toString(randomNumber));
         int finalGuess = Integer.parseInt(inputGuess.getText().toString());
 
         if(finalGuess > randomNumber ) {
